@@ -1,28 +1,26 @@
-/*This creates a prompt that will ask the user
-to name their robot.
-the segment var playerName stores this
-information as the playerName variable.*/
 var playerName = window.prompt("What is your robot's name?");
+var playerHealth = 100;
+var playerAttack = 10;
 
-/*This creates a window that will display the newly
-created varialbe, playerName.*/
-//window.alert(playerName);
+//You can also log multiple values at once like this
+console.log(playerName, playerAttack, playerHealth);
 
-/*This will publish the playerName variable to the
-developer console, useful for testing &
-troubleshooting.*/
-console.log(playerName);
-//The following will log a string.
-console.log("This logs a string, good for leaving yourself a message.");
-//This will do math and log the result.
-console.log(10 + 10);
-//This will log a string followed by a stored variable.
-console.log("Our robot's name is " + playerName);
+var enemyName = "Roborto";
+var enemyHealth = 50;
+var enemyAttack = 12;
 
-//This creates a function named "fight".
-function fight() {
-    window.alert("The fight has begun!");
-}
+var fight = function() {
+    // 1) Alert players that they are starting the round.
+    window.alert("Welcome to Robot Gladiators!");
 
-//and this will run the function "fight".
-//fight();
+    // 2) Subtract the value of "playerAttack" from the value of "enemyHealth" and use that result to update the "playerHealth" variable.
+    enemyHealth = enemyHealth - playerAttack;
+
+    // 3) Log a resulting message to the console to know that it worked.
+    console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining.");
+    
+    // 4) Subtract the value of "enemyAttack" from the value of "playerHealth" and use that result to update the "playerHealth" variable.
+
+    // 5) Log a resulting message to the console to know that it worked. 
+};
+fight();
