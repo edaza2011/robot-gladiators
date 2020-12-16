@@ -17,7 +17,16 @@ var fight = function() {
     enemyHealth = enemyHealth - playerAttack;
 
     // 3) Log a resulting message to the console to know that it worked.
-    console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining.");
+    console.log(playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+    );
+
+    // 3.5) Check enemy's health and report to the player.
+    if (enemyHealth <= 0) {
+        window.alert(enemyName + " is now a pile of scrap!");
+    }
+    else {
+        window.alert(enemyName + " still has " + enemyHealth + " health left.");
+    }
 
     // 4) Subtract the value of "enemyAttack" from the value of "playerHealth" and use that result to update the "playerHealth" variable.
     playerHealth = playerHealth - enemyAttack;
@@ -26,5 +35,13 @@ var fight = function() {
     console.log(
         enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
     );
+
+    // 5.5) Check player's health and report to the player.
+    if (playerHealth <= 0) {
+        window.alert(playerName + " has been reduced to a pile of scrap!");
+    }
+    else {
+        window.alert(playerName + " still has " + playerHealth + " health remaining.");
+    }
 };
 fight();
