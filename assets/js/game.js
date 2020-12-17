@@ -100,6 +100,26 @@ var fight = function(enemyName) {
         }
     }
 }
+// Check player's health to make sure game over isn't achieved.
+if (playerHealth > 0) {
+    for(var i=0; i < enemyNames.length; i++) {
+    // Let the player know what round they are in, remember that array starts at value 0
+    window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+
+    // Pick a new enemy to fight based on the index of the enemyNames array.
+    var pickedEnemyName = enemyNames[i];
+
+    // Reset enemyHealth before starting a new fight.
+    enemyHealth = 50;
+
+    // Use debugger to pause scipt from running to check and see what's going on at that moment in the code.
+    //debugger;
+
+    // Pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter.
+    fight(pickedEnemyName);
+}
+} 
+/* Obsolete / Old Code
 // Use a for loop to increment enemyNames to fight all opponents.
 for(var i = 0; i < enemyNames.length; i++) {
     
@@ -109,8 +129,10 @@ for(var i = 0; i < enemyNames.length; i++) {
     // Resets enemy health to full (50) before each new battle.
     enemyHealth = 50;
     
+    // Use the debugger to pause scipt from running and check what's going on at that moment in the code. 
     //debugger;
     
-    // Call the fight function with enemy-robot.
+    // Pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter.
     fight(pickedEnemyName)
 }
+*/
